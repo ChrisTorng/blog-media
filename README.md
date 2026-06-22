@@ -1,8 +1,8 @@
 # blog-media
 
-本資料夾使用 `http-server` 提供本機開發所需的媒體檔案。
+網站文章的音訊與影片存放在這個 repo，正式網址是 <https://media.christorng.idv.tw>。
 
-## 啟動伺服器
+## 啟動本機伺服器
 
 在本資料夾執行：
 
@@ -10,6 +10,8 @@
 npm start
 ```
 
-接著開啟 <http://127.0.0.1:3001/>。
+接著可從 <http://localhost:3001/> 存取檔案。伺服器固定使用 port `3001`、只監聽本機，並停用快取。
 
-伺服器設定儲存在 `package.json`：固定使用 port `3001`、只監聽本機，並停用快取以方便開發。`http-server` 需已安裝並可由終端機直接執行。
+主網站內容使用 `/blog-media/<path-from-repo-root>` 路徑。例如，本 repo 的 `audio/example.mp3` 在內容中寫成 `/blog-media/audio/example.mp3`。主網站元件會在開發環境解析成 `http://localhost:3001/audio/example.mp3`，在 production 解析成 `https://media.christorng.idv.tw/audio/example.mp3`。
+
+`http-server` 需已安裝並可由終端機直接執行。
